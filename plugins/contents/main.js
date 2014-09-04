@@ -298,7 +298,6 @@ define(templates,function (sectionsTpl, contentsTpl, folderTpl, mimeTypes) {
             // Now we check if we have to alert the user that is about to download a large file.
 			var zext = file.filename.substr(file.filename.lastIndexOf(".") + 1);
 			var zfnom = file.filename.substr(file.filename.lastIndexOf("/") + 1);
-			var zdurl = "http://x-iromy.rhcloud.com/video/"+fnom;
 			//alert(ext);
 			if(zext != "mp4"){
 				if (file.filesize) {
