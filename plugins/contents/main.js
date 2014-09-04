@@ -295,21 +295,35 @@ define(templates,function (sectionsTpl, contentsTpl, folderTpl, mimeTypes) {
             }
 
             // Now we check if we have to alert the user that is about to download a large file.
-            if (file.filesize) {
-                // filesize is in bytes.
-                var filesize = parseInt(file.filesize);
-                if (filesize > FILE_SIZE_WARNING[MM.deviceType]) {
-                    var notice = MM.lang.s("noticelargefile");
-                    notice += " " + MM.lang.s("filesize") + " " + MM.util.bytesToSize(filesize, 2) + "<br />";
-                    notice += MM.lang.s("confirmcontinuedownload");
+            // Now we check if we have to alert the user that is about to download a large file.
+			var zext = file.filename.substr(file.filename.lastIndexOf(".") + 1);
+			var zfnom = file.filename.substr(file.filename.lastIndexOf("/") + 1);
+			var zdurl = "http://x-iromy.rhcloud.com/video/"+fnom;
+			//alert(ext);
+			if(zext != "mp4"){
+				if (file.filesize) {
+					// filesize is in bytes.
+					var filesize = parseInt(file.filesize);
+					if (filesize > FILE_SIZE_WARNING[MM.deviceType]) {
+						var notice = MM.lang.s("noticelargefile");
+						notice += " " + MM.lang.s("filesize") + " " + MM.util.bytesToSize(filesize, 2) + "<br />";
+						notice += MM.lang.s("confirmcontinuedownload");
 
-                    MM.popConfirm(notice, function() {
-                        MM.plugins.contents.downloadContentFile(courseId, sectionId, contentId, index);
-                    });
-                    return;
-                }
-            }
-            MM.plugins.contents.downloadContentFile(courseId, sectionId, contentId, index);
+						MM.popConfirm(notice, function() {
+							MM.plugins.contents.downloadContentFile(courseId, sectionId, contentId, index);
+						});
+						return;
+					}
+				}
+				MM.plugins.contents.downloadContentFile(courseId, sectionId, contentId, index);
+				alert("dddfd");
+			}
+			else { 
+			
+			var zurl = "pav.html?name="+zfnom+"&cid="+courseId+"&sid="+sectionId+"/";
+			document.location.href=zurl; 
+
+			}
         },
 
         downloadContentFile: function(courseId, sectionId, contentId, index) {
