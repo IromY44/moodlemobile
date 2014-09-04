@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="css/layout.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<style>
+		body {
+		  color: #ffffff;
+		  background: #0088cc;
+		  font-family: Helvetica, sans-serif;
+		 
+		  line-height: 24px;
+		  
+		}
+		h1{
+			 color: #ffffff;
+		}
+		#mon {
+		margin:0 auto 0 auto;
+		width:320px;
+		height:240px;
+		}
+		</style>
+        <title></title>
+    </head>
+    <body>
+	
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+				var $_GET = {};    
+				var params = location.search.substring(1).split('&');    
+				for (var i = 0; i < params.length; ++i) {    
+					var param = params[i].split('=');    
+					$_GET[param[0]] = param[1]
+					$_GET[param[0]] = $_GET[param[0]].replace(/"/g,'');    
+				}    
+			var th = '<div id="mon"><video width="320" height="240" controls border="2"><source src="http://x-iromy.rhcloud.com/video/'+$_GET["name"]+'" type="video/mp4"></video></div>';
+				
+			var af='<div>\
+		<a href="index.html"><img src="img/menu-back.png" style="float:left" border="0"><h1   >Retour</h1></a><br><br><br>\
+	</div>';
+	
+				document.write(af+th);
+		</script>
+		
+    </body>
+</html>
