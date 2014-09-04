@@ -315,7 +315,8 @@ define(templates,function (sectionsTpl, contentsTpl, folderTpl, mimeTypes) {
 					}
 				}
 				MM.plugins.contents.downloadContentFile(courseId, sectionId, contentId, index);
-				alert("dddfd");
+				//alert("dddfd");
+				//alert("dddfd");
 			}
 			else { 
 			
