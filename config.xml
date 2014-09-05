@@ -2,17 +2,17 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "com.moodle.moodlemobile"
+        id        = "com.iromy.minpt"
         versionCode = "378"
         version   = "1.6">
-    <name>Moodle Mobile</name>
+    <name>M-INPT</name>
 
     <description>
-        Moodle Mobile official app
+        Mobile-INPT official app
     </description>
 
-    <author href="http://moodle.com" email="juan@moodle.com">
-        Juan Leyva
+    <author href="http://x-iromy.rhcloud.com" email="iromys44@outlook.com">
+        Mohamed Younes BAHAOUI
     </author>
 
     <feature name="http://api.phonegap.com/1.0/device" />
